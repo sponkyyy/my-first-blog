@@ -1,23 +1,27 @@
 <html>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        
 
-<head>
-    <title>Sponky b$og</title>
-</head>
-<body>
-    <div><h1><a href="">Everybody Hellow</a></h1></div>
- 
-   <div><p>It is my first website on python + Django.<br/>It is very cool</p></div>
-
-
-    <strong>Yea it is my first step.<br/>I am very happy</strong>
+    <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+    
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
     
 
-
-
-</body>
-
-
-
-
-
+        <div>
+            <p>published: 14.06.2014, 12:14</p>
+            <h2><a href="">My second post</a></h2>
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+        </div>
+    </body>
 </html>
